@@ -20,15 +20,6 @@ const options = {
   ]
 };
 
-const list = [
-  {
-    "title": "2020-01-01",
-    "alt": "this is the alt text",
-    "comic": "The actual tect in the comic",
-    "bonus": "bonus pa an l tex t"
-  }
-];
-
 const fuse = new Fuse(list, options);
 
 function updateSearch() {
@@ -37,8 +28,8 @@ function updateSearch() {
   resultsBox.innerHTML = "";
   console.log(searchbox.value);
   var fuseResults = fuse.search(searchbox.value);
-  console.log(fuseResults);
-  for (var i = 0; i < fuseResults.length; i++) {
+  var maxlen = Math.min(10, fuseResults.length);
+  for (var i = 0; i < maxlen; i++) {
     var fuseResult = fuseResults[i];
     var resultItemLink = document.createElement("a");
     var resultCard = document.createElement("div");
