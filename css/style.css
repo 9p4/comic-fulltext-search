@@ -1,0 +1,84 @@
+* {
+  font-family: sans-serif;
+  color: #fc5c04;
+}
+
+h1 {
+  text-align: center;
+}
+
+#results {
+  margin-bottom: 20px;
+}
+
+/* https://tutorialdeep.com/knowhow/add-shadow-effect-to-div-css/ */
+#card {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  background: #fff;
+  padding: 10px;
+  transition: top ease 0.2s;
+  transition: box-shadow 0.1s;
+  position: relative;
+  top: 0;
+  box-shadow: 0px 4px 8px 0px #969696;
+  -webkit-box-shadow: 0px 4px 8px 0px #969696;
+  width: 150px;
+  height: 150px;
+}
+
+#card:hover {
+  top: -2px;
+  box-shadow: 0px 4px 16px 0px #969696;
+  -webkit-box-shadow: 0px 8px 16px 0px #969696;
+}
+
+#results a {
+  text-decoration: none;
+}
+
+/* https://stackoverflow.com/a/18077407 */
+@media (min-width:320px) {
+  /* smartphones, iPhone, portrait 480x320 phones */
+  #card {
+    width: 90%;
+  }
+}
+@media (min-width:481px) { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+@media (min-width:641px) {
+  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  #card {
+    width: 80%;
+  }
+}
+@media (min-width:961px) { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:1281px) { /* hi-res laptops and desktops */ }
+
+/* https://blog.stackfindover.com/css-search-boxes/ */
+.search-container {
+  max-width: 600px;
+  margin: 50px auto;
+}
+textarea {
+  resize: none;
+  display: block;
+  width: calc(100% - 24px); /*20px [ left & Right ] padding + 4px border [ left & Right ] */ 
+  height: 24px;
+  overflow: hidden;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px;
+  border: 2px solid #fc9c6c;
+}
+
+footer {
+  text-align: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #eee;
+}
