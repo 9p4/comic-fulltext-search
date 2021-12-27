@@ -28,7 +28,7 @@ function updateSearch() {
   resultsBox.innerHTML = "";
   console.log(searchbox.value);
   var fuseResults = fuse.search(searchbox.value);
-  var maxlen = Math.min(10, fuseResults.length);
+  var maxlen = Math.min(100, fuseResults.length);
   for (var i = 0; i < maxlen; i++) {
     var fuseResult = fuseResults[i];
     var resultItemLink = document.createElement("a");
