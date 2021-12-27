@@ -63,7 +63,7 @@ h1 {
   margin: 50px auto;
 }
 
-textarea {
+input[type=text] {
   resize: none;
   display: block;
   width: calc(100% - 24px); /*20px [ left & Right ] padding + 4px border [ left & Right ] */ 
