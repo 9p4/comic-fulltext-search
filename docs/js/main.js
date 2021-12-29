@@ -37,6 +37,9 @@ function updateSearch() {
     timer = setTimeout(function() {    
       var searchbox = document.getElementById("searchbox");
       var resultsBox = document.getElementById("results");
+      if (searchbox.value.len < 3) {
+        return
+      }
       if (searchbox.value == prevsearch) {
         return;
       } else {
