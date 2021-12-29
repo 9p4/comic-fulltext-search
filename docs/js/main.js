@@ -4,9 +4,10 @@ const options = {
   shouldSort: true,
   includeMatches: false,
   findAllMatches: true,
-  minMatchCharLength: 1,
+  minMatchCharLength: 2,
+  matchAllTokens: false,
   location: 0,
-  threshold: 0.5,
+  threshold: 0.6,
   distance: 100,
   useExtendedSearch: true,
   ignoreLocation: true,
@@ -19,7 +20,9 @@ const options = {
   ]
 };
 
-const fuse = new Fuse(list, options);
+const index = Fuse.parseIndex(fuseIndex);
+
+const fuse = new Fuse(list, options, index);
 var timer;
 var prevsearch = '';
 
