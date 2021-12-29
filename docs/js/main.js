@@ -1,22 +1,21 @@
 const options = {
   isCaseSensitive: false,
-  includeScore: false,
+  includeScore: true,
   shouldSort: true,
   includeMatches: false,
-  findAllMatches: false,
+  findAllMatches: true,
   minMatchCharLength: 1,
   location: 0,
-  threshold: 0.6,
+  threshold: 0.5,
   distance: 100,
   useExtendedSearch: false,
-  ignoreLocation: false,
+  ignoreLocation: true,
   ignoreFieldNorm: false,
   fieldNormWeight: 1,
   keys: [
-    "title",
-    "alt",
-    "comic",
-    "bonus"
+    {name: "title", weight: 0.1},
+    {name: "text", weight: 0.8},
+    {name: "bonusText", weight: 0.2}
   ]
 };
 
@@ -45,23 +44,23 @@ function updateSearch() {
       }
       console.log(searchbox.value);
       var fuseResults = fuse.search(searchbox.value);
-      var maxlen = Math.min(100, fuseResults.length);
+      var maxlen = Math.min(10, fuseResults.length);
       resultsBox.innerHTML = "";
       for (var i = 0; i < maxlen; i++) {
         var fuseResult = fuseResults[i];
-        var resultItemLink = document.createElement("a");
         var resultCard = document.createElement("div");
-        resultCard.classList.add("box-shadow")
-        resultItemLink.appendChild(resultCard);
-        resultItemLink.href = "https://smbc-comics.com/comic/" + fuseResult.item.title;
+        var resultLink = document.createElement("a")
+        resultLink.href = fuseResult.item.url;
+        var image = document.createElement("img");
+        image.src = fuseResult.item.imageURL;
+        resultCard.classList.add("box-shadow");
         resultCard.id = "card";
         var resultTitle = document.createElement("h2");
-        var resultAlt = document.createElement("h3");
         resultTitle.innerText=fuseResult.item.title;
-        resultAlt.innerText=fuseResult.item.alt;
         resultCard.appendChild(resultTitle);
-        resultCard.appendChild(resultAlt);
-        resultsBox.appendChild(resultItemLink);
+        resultCard.appendChild(image);
+        resultLink.appendChild(resultCard);
+        resultsBox.appendChild(resultLink);
       }
     }, 1000);
   }
