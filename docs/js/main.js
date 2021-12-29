@@ -8,7 +8,7 @@ const options = {
   location: 0,
   threshold: 0.5,
   distance: 100,
-  useExtendedSearch: false,
+  useExtendedSearch: true,
   ignoreLocation: true,
   ignoreFieldNorm: false,
   fieldNormWeight: 1,
