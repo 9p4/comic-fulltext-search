@@ -49,6 +49,8 @@ function updateSearch() {
       for (var i = 0; i < maxlen; i++) {
         var fuseResult = fuseResults[i];
         var resultCard = document.createElement("div");
+        var score = document.createElement("p");
+        score.innerText = "Score: ".concat("", (1-fuseResult.score))
         var resultLink = document.createElement("a")
         resultLink.href = fuseResult.item.url;
         var image = document.createElement("img");
@@ -58,6 +60,7 @@ function updateSearch() {
         var resultTitle = document.createElement("h2");
         resultTitle.innerText=fuseResult.item.title;
         resultCard.appendChild(resultTitle);
+        resultCard.appendChild(score);
         resultCard.appendChild(image);
         resultLink.appendChild(resultCard);
         resultsBox.appendChild(resultLink);
