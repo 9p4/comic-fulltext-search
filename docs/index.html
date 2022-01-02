@@ -7,7 +7,6 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="icon" type="image/x-icon" href="favicon.ico">
      <script src="js/data.js"></script>
-     <script src="js/index.js"></script>
      <script src="js/fuse.min.js"></script>
      <script src="js/main.js"></script>
      <link rel="stylesheet" href="css/style.css">
@@ -15,7 +14,41 @@
   <body>
     <h1>SMBC Fulltext Search</h1>
     <div class="search-container">
-      <input type="text" id="searchbox" placeholder="Enter at least three characters to search"/>
+      <input title="Search" type="text" id="searchbox" onkeypress="updateSearchKeyboard(event)" placeholder="Search..." value="" autofocus />
+      <br>
+      <label for="advanced-checkbox">Advanced Search</label>
+      <input type="checkbox" id="advanced-checkbox" hidden>
+      <table id="advanced-table">
+        <thead>
+          <tr>
+            <th class="table-token">Token</th>
+            <th class="table-value">Match type</th>
+            <th>Description</th>
+          </tr>     
+        </thead>
+        <tbody>
+          <tr>
+            <td class="table-token">SMBC</td>
+            <td class="table-value">fuzzy-match</td>
+            <td>Items that fuzzy match SMBC</td>
+          </tr>
+          <tr>
+            <td class="table-token">=comic</td>
+            <td>exact-match</td>
+            <td>Items that are comic</td>
+          </tr>
+          <tr>
+            <td class="table-token">'zach</td>
+            <td>include-match</td>
+            <td>Items that include zach</td>
+          </tr>
+          <tr>
+            <td class="table-token">!kelly</td>
+            <td>inverse-exact-match</td>
+            <td>Items that do not include kelly</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     <div id="results">
     </div>

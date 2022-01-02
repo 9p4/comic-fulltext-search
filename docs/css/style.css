@@ -87,6 +87,8 @@ input[type=text] {
   font-weight: 600;
   padding: 10px;
   border: 2px solid #fc9c6c;
+  -webkit-appearance: searchfield;
+  border-radius: 0px;
 }
 
 footer {
@@ -97,4 +99,40 @@ footer {
   bottom: 0;
   width: 100%;
   background-color: #eee;
+}
+
+#advanced-table {
+  display: none;
+}
+
+#advanced-checkbox:checked ~ #advanced-table {
+  display: block;
+}
+
+label {
+  cursor: pointer;
+  align-items: center;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+.table-token {
+  width: 20%;
+}
+
+.table-value {
+  width: 40%;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  table-layout: fixed;
+  overflow-wrap: break-word;
+}
+
+td {
+  padding: 2px 5px;
 }
