@@ -1,6 +1,6 @@
 # SMBC Comic Fulltext Search
 
-This leverages my [other repository](https://github.com/sambhavsaggi/comic-ocr) to create a frontend to search for text in [SMBC comics](https://www.smbc-comics.com).
+This leverages my [other repository](https://github.com/9p4/comic-ocr) to create a frontend to search for text in [SMBC comics](https://www.smbc-comics.com).
 
 ## Why tho
 
